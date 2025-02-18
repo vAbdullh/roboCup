@@ -1,0 +1,25 @@
+#envoriment
+.env
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# build
+build/
+dist/
+out/
+
+# Express.js
+dist/
+
+# firebase
+firebase-key.json
+#  vite
+.vite/  
+
+# costom code not involved in the project
+createuser.js
+
+tmp/
