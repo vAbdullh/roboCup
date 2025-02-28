@@ -1,16 +1,76 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: "AraHamahAlFidaa";
-    src: url('assets/fonts/alfont_com_AraHamahAlFidaa-Regular.otf');
+    font-family: 'AraHamahAlFidaa';
+    src: url('/assets/fonts/alfont_com_AraHamahAlFidaa-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apotek ExtraWide';
+    src: url('/assets/fonts/Apotek_ExtraWide_Black.otf') format('opentype');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'Apotek ExtraWide';
+    src: url('/assets/fonts/Apotek_ExtraWide_Bold.otf') format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Apotek ExtraWide';
+    src: url('/assets/fonts/Apotek_ExtraWide_ExtraLight.otf') format('opentype');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Apotek ExtraWide';
+    src: url('/assets/fonts/Apotek_ExtraWide_Light.otf') format('opentype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Apotek ExtraWide';
+    src: url('/assets/fonts/Apotek_ExtraWide_Medium.otf') format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Apotek ExtraWide';
+    src: url('/assets/fonts/Apotek_ExtraWide_Regular.otf') format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Apotek ExtraWide';
+    src: url('/assets/fonts/Apotek_ExtraWide_Semibold.otf') format('opentype');
+    font-weight: 600;
 }
 
 * {
-    /* font-family: "AraHamahAlFidaa"; */
-    /* letter-spacing: 1px; */
-    /* font-size: /; */
-    /* line-height: 1; */
-    /* font-weight: 200; */
+    font-family: 'Apotek ExtraWide', sans-serif;
+    letter-spacing: 1/2px;
+    font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* @apply text-9xl; */
+    font-family: 'AraHamahAlFidaa', sans-serif;
+}
+
+.font-AraHamahAlFidaa {
+    font-family: 'AraHamahAlFidaa', sans-serif;
+}
+
+.font-ApotekExtraWide {
+    font-family: 'Apotek ExtraWide', sans-serif;
 }
 
 @keyframes fade-in {

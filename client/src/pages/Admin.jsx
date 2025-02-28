@@ -1,5 +1,5 @@
 // src/pages/AdminDashboard.jsx
-import { useState } from "react";
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/admin/Sidebar";
 import Teams from "../components/admin/Teams";

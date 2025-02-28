@@ -22,7 +22,6 @@ const Matches = () => {
 
     useEffect(() => {
         const loadData = async () => {
-            console.log(user.accessToken)
             const teams = await api.getTeams();
             if (teams) setTeams(teams);
             await fetchMatches()
@@ -55,6 +54,7 @@ const Matches = () => {
             toast.promise(api.createMatch(match, user.accessToken), {
                 loading: "Creating match...",
                 success: async () => {
+                    handleCloseForm()
                     fetchMatches()
                     return `Match created successfully: ${teams.find(t => t.id === match.team1Id)?.name} vs ${teams.find(t => t.id === match.team2Id)?.name} at ${new Date(match.time).toLocaleString()}`;
                 },
@@ -65,7 +65,7 @@ const Matches = () => {
             toast.error(error.message);
         } finally {
             setLoading(false);
-            handleCloseForm();
+
         }
 
     };
@@ -77,8 +77,7 @@ const Matches = () => {
         }));
     };
     const handleAction = async (action, matchId, team1Id, team1Score, team2Score) => {
-        console.log(`parms: ${action} ${matchId} ${team1Id} ${team1Score} ${team2Score}`);
-        
+
         const token = user.accessToken;
         confirmAlert({
             title: 'Confirm Action',
@@ -98,7 +97,6 @@ const Matches = () => {
                                 await api.setBreakMatch(matchId, token);
                             }
                             else if (action === "score") {
-                                console.log("updating score", matchId);
                                 await api.updateMatchScoreByTeamId(matchId, team1Id, token);
                             }
                             else if (action === "delete") {

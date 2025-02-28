@@ -1,4 +1,4 @@
-// src/App.jsx
+import React, { useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import { Toaster } from "sonner";
@@ -6,9 +6,18 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AuthPage from "./pages/Auth";
 import AdminDashboard from "./pages/Admin";
 import Home from "./pages/Home";
-import { Bug } from "lucide-react";
+import Leaderboard from "./pages/Leaderboard";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Rules from "./pages/Rules";
+import Matches from "./pages/Matches";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <AuthProvider>
       <AppContent />
@@ -27,10 +36,18 @@ function AppContent() {
   }
   return (
     <Router>
-      <Toaster richColors position="top-right" closeButton />
+      <Toaster richColors position="top-right" closeButton toastOptions={{
+        style: {
+          fontWeight: '200',
+          letterSpacing: '1px',
+        },
+      }} />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route path="*" element={<Navigate to={'/auth'} />} />
+        <Route path="*" element={<Navigate to={'/'} />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/rules" element={<Rules />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/matches" element={<Matches />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route
           path="/admin"
@@ -41,7 +58,7 @@ function AppContent() {
           }
         />
       </Routes>
-      {/* <div className="fixed top-0 right-0 bg-green-400 text-white p-2 flex justify-center items-center gap-1"><Bug color="#fff" />Demo</div> */}
+      {/* <div className="fixed bottom-0 right-0 bg-green-400 text-white p-2 flex justify-center items-center gap-1"><Bug color="#fff" />Demo</div> */}
     </Router>
   );
 }

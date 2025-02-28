@@ -34,7 +34,7 @@ const LargeScreen = ({ handleLogout, user, selected, setSelected }) => {
 
     return (
         <>
-            <h1 className='font-bold text-xl font-sans xl:mb-5 text-center hidden xl:flex gap-2 items-center capitalize'><Wrench />Admin dashboard</h1>
+            <h1 className='font-bold text-2xl font-sans xl:mb-5 text-center hidden xl:flex gap-2 items-center capitalize tracking-wide'><Wrench />Admin dashboard</h1>
             <nav className='hidden xl:block grow min-w-full'>
                 <ul className="flex flex-col gap-2 items-start h-full">
                     <li onClick={() => setSelected('Teams')} className={`flex items-center gap-2 w-full p-2  transition-all transform duration-300  rounded-md cursor-pointer ${selected === 'Teams' ? 'bg-[#151f27]' : 'hover:bg-[#1c2a35]'}`}><Users />Teams</li>

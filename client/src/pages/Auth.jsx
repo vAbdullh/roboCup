@@ -1,6 +1,6 @@
 // src/pages/AuthPage.jsx
 import { useState, useEffect } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/setup";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -23,6 +23,14 @@ const AuthPage = () => {
     useEffect(() => {
         quantum.register();
     }, []);
+    const handleReset = async () => {
+        try {
+            await sendPasswordResetEmail(auth, email);
+            toast.success("Password reset email sent! Check your inbox.");
+        } catch (error) {
+            console.error("Error sending password reset email:", error);
+        }
+    };
     const handleLogin = async (e) => {
         e.preventDefault();
         const adminErrorMessages = [
@@ -98,6 +106,7 @@ const AuthPage = () => {
                         ></l-quantum> : 'Login'}
                     </button>
                 </form>
+                <button className="bg-amber-300 hover:bg-amber-500" onClick={handleReset}>reset</button>
                 <button className="bg-blue-500 text-white p-3 " onClick={handleLogin}>Fast login</button>
             </div>
         </>
