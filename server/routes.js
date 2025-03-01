@@ -3,7 +3,7 @@ const matchHandler = require('./handlers/matchHandler');
 const teamHandler = require('./handlers/teamHandler');
 const leaderboardHandler = require('./handlers/leaderboardHandler');
 const { getLogs } = require('./handlers/logsHandler');
-const healthHandler = require('./handlers/healthHandler').default;
+const healthHandler = require('./handlers/healthHandler');
 
 module.exports = function (app) {
     app.get('/health', healthHandler.health);

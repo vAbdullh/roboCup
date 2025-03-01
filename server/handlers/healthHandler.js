@@ -5,4 +5,4 @@ const healthHandler = {
 
 }
 
-export default healthHandler;
+module.exports = healthHandler;
