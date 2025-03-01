@@ -4,8 +4,8 @@ const matchOperations = require('../database/match-db');
 const matchHandler = {
     async createMatch(req, res) {
         try {
-            const { team1Id, team2Id, team1Score, team2Score, status, time, user } = req.body;
-            if (!team1Id || !team2Id || !time) {
+            const { team1Id, team2Id, team1Score, team2Score, status, time, venue, user } = req.body;
+            if (!team1Id || !team2Id || !time || !venue) {
                 return res.status(400).send({
                     err: 'Missing required fields',
                     body: req.body
@@ -15,10 +15,11 @@ const matchHandler = {
             const matchRef = await matchOperations.create(
                 team1Id,
                 team2Id,
-                team1Score || 0,
-                team2Score || 0,
+                team1Score,
+                team2Score,
                 status || 'upcoming',
                 time,
+                venue
             );
             res.status(201).json({ message: 'Match created successfully' });
             await logger('createMatch', new Date().getTime(), user, `New match created: "${matchRef.team1}" VS "${matchRef.team2}"`);
@@ -63,6 +64,21 @@ const matchHandler = {
         } catch (err) {
             console.error("error", err);
             res.status(500).send({ error: 'Failed to update match score' });
+        }
+    },
+    async updateMatchVenueById(req, res) {
+        try {
+            const { matchId } = req.params;
+            const { venue, user } = req.body;
+            if (!venue) {
+                return res.status(400).send({ error: 'Missing required fields' });
+            }
+            const matchRef = await matchOperations.updateVenue(matchId, venue);
+            res.status(200).json({ message: `Match venue updated: "${matchRef.info}"` });
+            await logger('updateMatchVenue', new Date().getTime(), user, `Match venue updated: "${matchRef.info}"`);
+        } catch (err) {
+            console.error("error", err);
+            res.status(500).send({ error: 'Failed to update match venue' });
         }
     },
 

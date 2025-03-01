@@ -14,7 +14,7 @@ module.exports = function (app) {
     app.patch('/match/break/:matchId', authMiddleware, matchHandler.setBreakById);
     app.patch('/match/end/:matchId', authMiddleware, matchHandler.endMatchById);
     app.patch('/match/score/:matchId/:teamId', authMiddleware, matchHandler.updateMatchScoreByTeamId);
-    app.patch('/match/:matchId', authMiddleware, matchHandler.updateMatchScoreById);
+    app.patch('/match/venue/:matchId', authMiddleware, matchHandler.updateMatchVenueById);
     app.delete('/match/:matchId', authMiddleware, matchHandler.deleteMatchById);
 
     app.get('/team', teamHandler.getAllTeams);

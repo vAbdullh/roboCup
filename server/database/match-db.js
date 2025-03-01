@@ -12,9 +12,7 @@ function validateScores(score1, score2) {
 }
 
 const matchOperations = {
-    async create(team1Id, team2Id, team1Score = 0, team2Score = 0, status = 'upcoming', time) {
-        // ! Validate scores using helper function
-        validateScores(team1Score, team2Score);
+    async create(team1Id, team2Id, team1Score = '-', team2Score = '-', status = 'upcoming', time, venue = null) {
 
         try {
             // ! Retrieve both team documents and check for existence before proceeding
@@ -37,6 +35,7 @@ const matchOperations = {
                 team2Score,
                 status,
                 time,
+                venue
             };
 
             const matchRef = await db.collection('matches').add(matchData);
@@ -127,6 +126,23 @@ const matchOperations = {
             throw error;
         }
     },
+    async updateVenue(matchId, venue) {
+        try {
+            const matchRef = db.collection('matches').doc(matchId);
+            if (!(await matchRef.get()).exists) {
+                throw new Error('Match not found');
+            }
+            await matchRef.update({ venue });
+            await lastModifyOperations.updateLastModifyMatch();
+
+            const updatedMatch = await matchRef.get();
+            return { id: updatedMatch.id, ...updatedMatch.data() };
+        } catch (error) {
+            console.error('Error updating match venue:', error);
+            throw error;
+        }
+    },
+
     async delete(matchId) {
         try {
             await db.collection('matches').doc(matchId).delete();
@@ -147,7 +163,7 @@ const matchOperations = {
             if (matchData.status !== 'upcoming' && matchData.status !== 'break') {
                 throw new Error('To start match it must be in upcoming status or break');
             }
-            await matchRef.update({ status: 'ongoing' });
+            await matchRef.update({ status: 'ongoing', team1Score: 0, team2Score: 0 });
             await lastModifyOperations.updateLastModifyMatch();
             // ! Fetch updated match data for a consistent response
             const updatedMatch = await matchRef.get();

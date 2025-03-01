@@ -22,6 +22,7 @@ if (!admin.apps.length) {
         credential: admin.credential.cert(serviceAccount),
         databaseURL: `https://${process.env.FIREBASE_PROJECT_ID}.firebaseio.com`,
     });
+    console.log("Firebase Admin SDK initialized");
 }
 
 // Export the initialized Firebase Admin instance
