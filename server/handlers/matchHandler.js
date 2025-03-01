@@ -85,6 +85,7 @@ const matchHandler = {
     async deleteMatchById(req, res) {
         try {
             const { matchId } = req.params;
+            const { user } = req.body;
             const matchRef = await matchOperations.delete(matchId);
             res.status(200).json({ message: 'Match deleted successfully' });
             await logger('deleteMatch', new Date().getTime(), user, `Match deleted: ${matchRef.info}`);

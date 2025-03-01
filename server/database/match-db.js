@@ -145,10 +145,17 @@ const matchOperations = {
 
     async delete(matchId) {
         try {
-            await db.collection('matches').doc(matchId).delete();
+            const matchRef = db.collection('matches').doc(matchId);
+            const matchDoc = await matchRef.get();
+            if (!matchDoc.exists) {
+                throw new Error('Match not found');
+            }
+            const matchData = { id: matchDoc.id, ...matchDoc.data().info };
+            await matchRef.delete();
             await lastModifyOperations.updateLastModifyMatch();
+            return matchData;
         } catch (error) {
-            console.error('Error deleting match:', error); // ! Improved error logging
+            console.error('Error deleting match:', error); // Improved error logging
             throw error;
         }
     },
