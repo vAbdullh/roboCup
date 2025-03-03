@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
     FaYoutube as Youtube,
     FaLinkedinIn as Linkedin,
@@ -28,7 +28,7 @@ export default function Footer() {
             icon: <Youtube className="size-5" />,
             href: "https://youtube.com/@kauecec",
         },
-    ]
+    ];
 
     return (
         <footer className="w-full bg-[#263741] py-6 px-4 border-t">
@@ -56,11 +56,24 @@ export default function Footer() {
                     <hr className="w-full max-w-[240px] h-px border-gray-500" />
 
                     {/* Copyright */}
-                    <p className="text-sm text-center text-gray-600 dark:text-gray-400">
-                        © {new Date().getFullYear()} RoboCup. {/*All rights reserved.*/}
+                    <p className="text-sm text-center text-white text-center">
+                        <span>© {new Date().getFullYear()} RoboCup, Electrical and Computer Engineering Club, KAU. All rights reserved.</span>
+                    </p>
+
+                    {/* Developer Credit */}
+                    <p className="text-sm text-center text-gray-500">
+                        Crafted with ❤️ by{" "}
+                        <a
+                            href="https://abdullh.tech"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-200 hover:text-white transition-colors underline"
+                        >
+                            abdullh.tech
+                        </a>
                     </p>
                 </div>
             </div>
         </footer>
-    )
+    );
 }

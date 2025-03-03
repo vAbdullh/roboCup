@@ -33,7 +33,7 @@ export default function Home() {
                 style={{ backgroundImage: `url(${bgImage})` }}>
                 <Header />
 
-                <div className="h-full w-full bg-black/75 flex flex-col gap-5 md:items-center justify-center text-white md:text-center p-3 ">
+                <div className="h-full w-full bg-black/75 flex flex-col gap-5 md:items-center justify-end md:justify-center text-white md:text-center p-3 pb-20 sm:p-3">
                     <h1 className="text-5xl md:text-9xl font-bold" data-aos="fade-up" data-aos-duration="1000">
                         RoboCup 2025
                     </h1>
