@@ -13,11 +13,7 @@ export const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setCurrentUser(user);
             setLoading(false);
-            if (user) {
-                document.body.style.backgroundColor = "#263741";
-            } else {
-                document.body.style.backgroundColor = "";
-            }
+            document.body.style.backgroundColor = "#263741";
         });
 
         return () => unsubscribe();

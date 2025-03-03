@@ -69,7 +69,7 @@ const AuthPage = () => {
     };
 
     return (
-        <div className="flex flex-col justify-between h-svh">
+        <div className="flex flex-col justify-between h-svh bg-gray-100">
             <Header dark_text />
             <div className="w-screen my-auto grid place-items-center">
                 <form className="max-w-lg w-96  md:w-full mx-auto px-10" onSubmit={handleLogin}>
