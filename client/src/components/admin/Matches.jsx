@@ -247,7 +247,7 @@ const Matches = () => {
       {/* matches  */}
       <div className="fade-in flex flex-col gap-3">
         <div className="inline-flex gap-2 flex-wrap rounded-md" role="group">
-          {["all", "upcoming", "ongoing", "break", "completed"].map((status) => (
+          {["all", "upcoming", "live", "break", "completed"].map((status) => (
             <button
               key={status}
               type="button"
@@ -292,7 +292,7 @@ const Matches = () => {
                     <div className="flex justify-between items-center border-b border-gray-400 pb-2 px-2">
                       <div className="flex items-center gap-2">
                         {match.status === "completed" && <CheckCheck color="#388E3C" className="text-2xl" />}
-                        {match.status === "ongoing" && <Cast color="#ff4826" className="text-2xl" />}
+                        {match.status === "live" && <Cast color="#ff4826" className="text-2xl" />}
                         {match.status === "break" && <Pause color="#f0b100" className="text-2xl" />}
                         {match.status === "upcoming" && <Calendar color="#9C27B0" className="text-2xl" />}
                         <span className="text-gray-600 capitalize">{match.status}</span>
@@ -302,8 +302,8 @@ const Matches = () => {
                     <div className="flex justify-between items-center gap-4 p-3 rounded-lg">
                       <div className="flex-1 text-right">
                         <p className="text-2xl text-gray-800 capitalize">{match.team1 || "Team 1"}</p>
-                        <div className={` items-center justify-between ${match.status === "ongoing" && "flex"}`}>
-                          {match.status === "ongoing" && (
+                        <div className={` items-center justify-between ${match.status === "live" && "flex"}`}>
+                          {match.status === "live" && (
                             <button
                               onClick={() => handleAction("score", match.id, null, match.team1Id)}
                               className="border-b border-blue-300 text-blue-700 hover:text-blue-900 hover:border-blue-600 flex items-center gap-1 transition-all transform duration-300 cursor-pointer"
@@ -322,7 +322,7 @@ const Matches = () => {
                         <p className="text-2xl text-gray-800 capitalize">{match.team2 || "Team 2"}</p>
                         <div className="flex items-center justify-between">
                           <p className="text-xl font-semibold text-gray-700">{match.team2Score ?? "N/A"}</p>
-                          {match.status === "ongoing" && (
+                          {match.status === "live" && (
                             <button
                               onClick={() => handleAction("score", match.id, null, match.team2Id)}
                               className="border-b border-blue-300 text-blue-700 hover:text-blue-900 hover:border-blue-600 flex items-center gap-1 transition-all transform duration-300 cursor-pointer"
@@ -397,7 +397,7 @@ const Matches = () => {
                             </button>
                           </>
                         )}
-                        {match.status === "ongoing" && (
+                        {match.status === "live" && (
                           <>
                             <button
                               onClick={() =>

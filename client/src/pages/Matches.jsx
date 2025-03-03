@@ -33,7 +33,7 @@ const STATUS_CONFIG = {
         badgeColor: "bg-green-100 text-green-800",
         icon: null,
     },
-    ongoing: {
+    live: {
         color: "border-red-500",
         bgColor: "bg-red-50",
         textColor: "text-red-700",
@@ -71,7 +71,7 @@ const MatchCard = ({ match }) => {
                 </div>
                 {status.icon && <div className="mr-2">{status.icon({ "aria-hidden": "true" })}</div>}
 
-                {!["ongoing", "break"].includes(match.status) && (
+                {!["live", "break"].includes(match.status) && (
                     <div className="flex items-center gap-1.5 text-gray-500 text-sm">
                         <FiCalendar className="h-3.5 w-3.5" aria-hidden="true" />
                         <span>{formatDate(match.time).split(" at ")[0]}</span>
@@ -202,17 +202,17 @@ export default function Matches() {
     }, [matches])
 
     // Filter options
-    const filterOptions = ["all", "upcoming", "ongoing", "break", "completed"]
+    const filterOptions = ["all", "upcoming", "live", "break", "completed"]
 
     return (
         <div className="flex flex-col min-h-screen bg-gray-50">
             <Header dark_text />
 
-            <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
+            <main className="grow-1 min-h-screen container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div className="rounded-xl py-6 mb-6">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-                        <h1 className="text-3xl font-bold text-gray-900 font-[AraHamahAlFidaa]">Matches</h1>
-
+                        <h1 className="hidden">Matches</h1>
+                        <p className="text-4xl text-gray-900">Matches</p>
                         <button
                             onClick={handleRefresh}
                             disabled={loading || refreshing}

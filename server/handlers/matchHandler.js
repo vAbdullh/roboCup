@@ -124,7 +124,7 @@ const matchHandler = {
             if (err.message === 'Match not found') {
                 return res.status(404).send({ error: err.message });
             }
-            if (err.message === 'To set break match must be in ongoing status') {
+            if (err.message === 'To set break match must be in live status') {
                 return res.status(400).send({ error: err.message });
             }
             res.status(500).send({ error: 'Failed to set break' });
@@ -145,7 +145,7 @@ const matchHandler = {
             if (err.message === 'Match not found') {
                 return res.status(404).send({ error: err.message });
             }
-            if (err.message === 'To end match it must be in ongoing status') {
+            if (err.message === 'To end match it must be in live status') {
                 return res.status(400).send({ error: err.message });
             }
             if (err.message === 'One or both teams not found') {

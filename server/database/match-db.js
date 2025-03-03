@@ -170,7 +170,7 @@ const matchOperations = {
             if (matchData.status !== 'upcoming' && matchData.status !== 'break') {
                 throw new Error('To start match it must be in upcoming status or break');
             }
-            await matchRef.update({ status: 'ongoing', team1Score: 0, team2Score: 0 });
+            await matchRef.update({ status: 'live', team1Score: 0, team2Score: 0 });
             await lastModifyOperations.updateLastModifyMatch();
             // ! Fetch updated match data for a consistent response
             const updatedMatch = await matchRef.get();
@@ -192,8 +192,8 @@ const matchOperations = {
                 throw new Error('Match not found');
             }
             const matchData = matchDoc.data();
-            if (matchData.status !== 'ongoing') {
-                throw new Error('To end match it must be in ongoing status');
+            if (matchData.status !== 'live') {
+                throw new Error('To end match it must be in live status');
             }
 
             // ! Update match status and scores
@@ -273,8 +273,8 @@ const matchOperations = {
             if (!(await matchRef.get()).exists) {
                 throw new Error('Match not found');
             }
-            if ((await matchRef.get()).data().status !== 'ongoing') {
-                throw new Error('To set break match must be in ongoing status');
+            if ((await matchRef.get()).data().status !== 'live') {
+                throw new Error('To set break match must be in live status');
             }
             await matchRef.update({ status: 'break' });
             await lastModifyOperations.updateLastModifyMatch();
