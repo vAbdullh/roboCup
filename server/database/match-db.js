@@ -150,7 +150,7 @@ const matchOperations = {
             if (!matchDoc.exists) {
                 throw new Error('Match not found');
             }
-            const matchData = { id: matchDoc.id, ...matchDoc.data().info };
+            const matchData = { id: matchDoc.id, info: matchDoc.data().info };
             await matchRef.delete();
             await lastModifyOperations.updateLastModifyMatch();
             return matchData;
