@@ -3,11 +3,14 @@ import { useAuth } from '../../context/AuthContext';
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/setup";
 import { Link, useNavigate } from 'react-router-dom';
-import { Bot, Home, LogOut, Wrench } from 'lucide-react';
-import { Users } from 'lucide-react';
-import { MonitorCog, Gamepad } from 'lucide-react';
-import { ChevronDown } from 'lucide-react';
-
+import { BsRobot as Bot } from "react-icons/bs";
+import { RiHome4Fill as Home } from "react-icons/ri";
+import { IoLogOut as LogOut } from "react-icons/io5";
+import { FaTools as Tool } from "react-icons/fa";
+import { PiUsersLight as Users } from "react-icons/pi";
+import { LuMonitorCog as Monitor } from "react-icons/lu";
+import { IoFootball as Ball } from "react-icons/io5";
+import { FaCaretDown as Down } from "react-icons/fa";
 export default function Sidebar({ selected, setSelected }) {
     const { user } = useAuth();
     const navigate = useNavigate();
@@ -34,12 +37,12 @@ const LargeScreen = ({ handleLogout, user, selected, setSelected }) => {
 
     return (
         <>
-            <h1 className='font-bold text-2xl font-sans xl:mb-5 text-center hidden xl:flex gap-2 items-center capitalize tracking-wide'><Wrench />Admin dashboard</h1>
+            <h1 className='font-bold text-2xl font-sans xl:mb-5 text-center hidden xl:flex gap-2 items-center capitalize tracking-wide'><Tool />Admin dashboard</h1>
             <nav className='hidden xl:block grow min-w-full'>
                 <ul className="flex flex-col gap-2 items-start h-full">
                     <li onClick={() => setSelected('Teams')} className={`flex items-center gap-2 w-full p-2  transition-all transform duration-300  rounded-md cursor-pointer ${selected === 'Teams' ? 'bg-[#151f27]' : 'hover:bg-[#1c2a35]'}`}><Users />Teams</li>
-                    <li onClick={() => setSelected('Matches')} className={`flex items-center gap-2 w-full p-2  transition-all transform duration-300  rounded-md cursor-pointer ${selected === 'Matches' ? 'bg-[#151f27]' : 'hover:bg-[#1c2a35]'}`}> <Gamepad />Matches</li>
-                    <li onClick={() => setSelected('Logs')} className={`flex items-center gap-2 w-full p-2  transition-all transform duration-300 rounded-md cursor-pointer ${selected === 'Logs' ? 'bg-[#151f27]' : 'hover:bg-[#1c2a35]'}`}><MonitorCog />Logs</li>
+                    <li onClick={() => setSelected('Matches')} className={`flex items-center gap-2 w-full p-2  transition-all transform duration-300  rounded-md cursor-pointer ${selected === 'Matches' ? 'bg-[#151f27]' : 'hover:bg-[#1c2a35]'}`}> <Ball />Matches</li>
+                    <li onClick={() => setSelected('Logs')} className={`flex items-center gap-2 w-full p-2  transition-all transform duration-300 rounded-md cursor-pointer ${selected === 'Logs' ? 'bg-[#151f27]' : 'hover:bg-[#1c2a35]'}`}><Monitor />Logs</li>
                 </ul>
             </nav>
 
@@ -59,13 +62,13 @@ const LargeScreen = ({ handleLogout, user, selected, setSelected }) => {
                     </p>
                 </div>
                 <div className='flex'>
-                    <button onClick={handleLogout} type="button" className="grow flex items-center text-white transition-all transform duration-300 justify-center gap-1 text-center rounded-l-md bg-[#D32F2F] px-3 py-2 cursor-pointer hover:bg-[#D32F2Fb4]">
+                    <button onClick={handleLogout} type="button" className="grow flex items-center text-white transition-all transform duration-300 justify-center gap-1 text-center rounded-l-md bg-[#D32F2F] px-3 py-2 cursor-pointer hover:bg-[#D32F2Fb4] h-full">
                         Logout
                         <LogOut color={'#fff'} size={16} />
 
                     </button>
                     <Link to='/'>
-                        <button className='bg-blue-700 hover:bg-blue-900 transition-all transform rounded-r-md p-2'><Home /></button>
+                        <button className='bg-blue-700 hover:bg-blue-900 transition-all transform rounded-r-md p-2 h-full'><Home className='text-xl' /></button>
                     </Link>
                 </div>
             </div >
@@ -89,7 +92,7 @@ const SmallScreen = ({ handleLogout, user, selected, setSelected }) => {
                         onClick={() => setIsOpen(!isOpen)}
                         className={`grid place-items-center cursor-pointer py-2 transition-all transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
                     >
-                        <ChevronDown />
+                        <Down />
                     </button>
                 </div>
                 <div className={`grow-1 w-full z-30  top-14 left-0 transition-all transform ${isOpen ? 'max-h-96 py-5 duration-500' : 'max-h-0 duration-500'}`}>
@@ -108,14 +111,14 @@ const SmallScreen = ({ handleLogout, user, selected, setSelected }) => {
                                 onClick={() => handleSelect('Matches')}
                                 className={`flex gap-2 w-full p-2 transition-all transform duration-300 rounded-md cursor-pointer ${selected === 'Matches' ? 'bg-[#151f27]' : 'hover:bg-[#1c2a35]'}`}
                             >
-                                <Gamepad size={20} />
+                                <Ball size={20} />
                                 <span>Matches</span>
                             </li>
                             <li
                                 onClick={() => handleSelect('Logs')}
                                 className={`flex gap-2 w-full p-2 transition-all transform duration-300 rounded-md cursor-pointer ${selected === 'Logs' ? 'bg-[#151f27]' : 'hover:bg-[#1c2a35]'}`}
                             >
-                                <MonitorCog size={20} />
+                                <Monitor size={20} />
                                 <span>Logs</span>
                             </li>
                         </ul>
@@ -138,7 +141,7 @@ const SmallScreen = ({ handleLogout, user, selected, setSelected }) => {
                             </p>
                         </div>
                         <div className='flex items-center'>
-                            <button onClick={handleLogout} type="button" className="grow flex items-center text-white transition-all transform duration-300 justify-center gap-1 text-center rounded-l-md bg-[#D32F2F] px-2 py-2 cursor-pointer hover:bg-[#D32F2Fb4]">
+                            <button onClick={handleLogout} type="button" className="flex items-center text-white transition-all transform duration-300 justify-center gap-1 text-center rounded-l-md bg-[#D32F2F] px-2 py-2 cursor-pointer hover:bg-[#D32F2Fb4]">
                                 <LogOut color={'#fff'} />
                             </button>
                             <Link to='/'>

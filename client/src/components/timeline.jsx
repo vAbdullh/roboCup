@@ -4,7 +4,7 @@ export default function Timeline() {
     const events = [
         {
             title: 'Registration',
-            date: 'March 21, 2025',
+            date: 'March 13-21, 2025',
             description: 'Teams register to participate in the competition.'
         },
         {

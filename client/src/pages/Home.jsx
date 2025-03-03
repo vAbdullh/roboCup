@@ -4,8 +4,16 @@ import bgImage from "../assets/hero.png";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Timeline from "../components/Timeline";
-import { Trophy, MapPin, CalendarRange, BotIcon as Robot, TimerIcon, Link2, ScrollText, ArrowRight } from "lucide-react"
 import SARIcon from "../assets/sar.svg";
+
+import { MdKeyboardDoubleArrowRight as ArrowRight } from "react-icons/md";
+import { LuTrophy as Trophy } from "react-icons/lu";
+import { CiLocationOn as Location } from "react-icons/ci";
+import { PiCalendarDots as Calendar } from "react-icons/pi";
+import { RiRobot2Line as Robot } from "react-icons/ri";
+import { MdOutlineTimer as Timer } from "react-icons/md";
+import { FaLink } from "react-icons/fa6";
+import { LuScrollText } from "react-icons/lu";
 
 export default function Home() {
     const aboutRef = useRef(null);
@@ -13,6 +21,10 @@ export default function Home() {
     const scrollToAbout = () => {
         aboutRef.current?.scrollIntoView({ behavior: "smooth" });
     };
+    const openRegisterFrom = () => {
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLSfTpbSF6uQxt0oO2wCgNJRkIkcNyCcEpXZ0F2QX9GomKyWAng/viewform?usp=preview", "_blank");
+    }
+
     return (
 
         <div className="">
@@ -30,15 +42,15 @@ export default function Home() {
                     </p>
                     <div className="flex gap-4 flex-col md:flex-row items-center justify-center w-full max-w-2xl mx-auto">
                         <button
-                            onClick={() => console.log("Register Now")}
+                            onClick={openRegisterFrom}
                             data-aos="fade-up" data-aos-duration="1000"
                             className="w-full grow-1 group flex items-center justify-center gap-3 
-                 bg-[#263741] hover:bg-[#344955]
-                 text-white font-semibold text-xl
-                 px-8 py-4 rounded-lg
-                 transform hover:-translate-y-0.5 active:translate-y-0
-                 transition-all duration-200
-                 shadow-lg hover:shadow-xl active:shadow text-center"
+                                       bg-[#263741] hover:bg-[#344955]
+                                      text-white font-semibold text-xl
+                                       px-8 py-4 rounded-lg
+                                       transform hover:-translate-y-0.5 active:translate-y-0
+                                        transition-all duration-200
+                                        shadow-lg hover:shadow-xl active:shadow text-center"
                         >
                             Register Now
                             <ArrowRight className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
@@ -81,7 +93,7 @@ export default function Home() {
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-amber-600" />
                             <h3 className="font-bold text-2xl sm:text-3xl flex gap-3 items-center">
                                 <div className="p-3 bg-amber-100 rounded-lg transition-transform">
-                                    <Trophy className="h-8 w-8 text-amber-500" strokeWidth={2} />
+                                    <Trophy className="h-8 w-8 text-amber-500" strokeWidth={1.8} />
                                 </div>
                                 <span>Prize Pool</span>
                             </h3>
@@ -118,7 +130,7 @@ export default function Home() {
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 to-red-600" />
                             <h3 className="font-bold text-2xl sm:text-3xl flex gap-3 items-center">
                                 <div className="p-3 bg-red-100 rounded-lg transition-transform">
-                                    <MapPin className="h-8 w-8 text-red-500" strokeWidth={2} />
+                                    <Location className="h-8 w-8 text-red-500" strokeWidth={1} />
                                 </div>
                                 <span>Location</span>
                             </h3>
@@ -147,7 +159,7 @@ export default function Home() {
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600" />
                             <h3 className="font-bold text-2xl sm:text-3xl flex gap-3 items-center">
                                 <div className="p-3 bg-blue-100 rounded-lg transition-transform">
-                                    <CalendarRange className="h-8 w-8 text-blue-500" strokeWidth={2} />
+                                    <Calendar className="h-8 w-8 text-blue-500" strokeWidth={2} />
                                 </div>
                                 <span>Date & Time</span>
                             </h3>
@@ -173,7 +185,7 @@ export default function Home() {
             {/* Section 3 */}
             <section className="w-full py-16 px-4 sm:px-6 bg-[#263741] text-white flex flex-col items-center justify-center">
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 flex items-center justify-center gap-3" >
-                    <TimerIcon className="h-10 w-10 text-[#4ECDC4]" />
+                    <Timer className="h-10 w-10 text-[#4ECDC4]" />
                     Timeline
                 </h2>
                 <Timeline />
@@ -182,7 +194,7 @@ export default function Home() {
             {/* Section 4 */}
             <section className="w-full py-16 px-4 sm:px-6 bg-white text-[#263741] grid place-items-center">
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 flex items-center justify-center gap-3" data-aos="fade-up" data-aos-duration="1000">
-                    <ScrollText className="h-10 w-10 text-[#4ECDC4]" />
+                    <LuScrollText className="h-10 w-10 text-[#4ECDC4]" />
                     Rules
                 </h2>
                 <div className="max-w-3xl mx-auto text-base sm:text-lg text-gray-600" data-aos="fade-up" data-aos-duration="1000">
@@ -202,9 +214,9 @@ export default function Home() {
                 </div>
                 <Link to="/rules"
                     data-aos="fade-up" data-aos-duration="900"
-                    className="border-b border-blue-400 transform transition-all duration-300 cursor-pointer p-2 mx-auto font-medium capitalize flex gap-2 text-blue-400 active:translate-y-1">
+                    className="border-b border-blue-400 transform transition-all duration-300 cursor-pointer p-2 mx-auto font-medium capitalize flex items-center gap-2 text-blue-400 active:translate-y-1">
                     <p>Explore more deities</p>
-                    <Link2 />
+                    <FaLink className="text-xl" />
                 </Link>
             </section >
 

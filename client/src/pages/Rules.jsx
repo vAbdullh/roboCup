@@ -1,5 +1,11 @@
 import React from "react";
-import { ShieldCheck, Users, Bot, CalendarRange, MapPin } from "lucide-react";
+
+import { BsPinMap as Location } from "react-icons/bs";
+import { PiCalendarDots as Calendar } from "react-icons/pi";
+import { RiRobot2Line as Bot } from "react-icons/ri";
+import { RiTeamLine as Team } from "react-icons/ri";
+import { GiSoccerField as Field } from "react-icons/gi";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -65,8 +71,8 @@ const Rules = () => {
                     {/* Match Rules */}
                     <div className="bg-white rounded-lg shadow p-8" data-aos="fade-up">
                         <div className="flex items-center mb-6">
-                            <ShieldCheck className="h-10 w-10 text-[#4ECDC4] mr-4" />
-                            <h2 className="text-2xl font-bold">Match Rules</h2>
+                            <Field className="h-10 w-10 text-[#4ECDC4] mr-4" />
+                            <p className="text-2xl font-bold">Match Rules</p>
                         </div>
                         <ul className="list-disc pl-8 space-y-2 text-gray-600">
                             {rulesData.matchRules.map((rule, index) => (
@@ -78,8 +84,8 @@ const Rules = () => {
                     {/* Important Dates */}
                     <div className="bg-white rounded-lg shadow p-8" data-aos="fade-up">
                         <div className="flex items-center mb-6">
-                            <CalendarRange className="h-10 w-10 text-[#4ECDC4] mr-4" />
-                            <h2 className="text-2xl font-bold">Key Dates</h2>
+                            <Calendar className="h-10 w-10 text-[#4ECDC4] mr-4" />
+                            <p className="text-2xl font-bold">Key Dates</p>
                         </div>
                         <ul className="list-disc pl-8 space-y-2 text-gray-600">
                             {rulesData.keyDates.map((rule, index) => (
@@ -91,7 +97,7 @@ const Rules = () => {
                     <div className="bg-white rounded-lg shadow p-8" data-aos="fade-up">
                         <div className="flex items-center mb-6">
                             <Bot className="h-10 w-10 text-[#4ECDC4] mr-4" />
-                            <h2 className="text-2xl font-bold">Robot Specifications</h2>
+                            <p className="text-2xl font-bold">Robot Specifications</p>
                         </div>
                         <ul className="list-disc pl-8 space-y-2 text-gray-600">
                             {rulesData.robotSpecifications.map((rule, index) => (
@@ -103,8 +109,8 @@ const Rules = () => {
                     {/* Team Requirements */}
                     <div className="bg-white rounded-lg shadow p-8" data-aos="fade-up">
                         <div className="flex items-center mb-6">
-                            <Users className="h-10 w-10 text-[#4ECDC4] mr-4" />
-                            <h2 className="text-2xl font-bold">Team Requirements</h2>
+                            <Team className="h-10 w-10 text-[#4ECDC4] mr-4" />
+                            <p className="text-2xl font-bold">Team Requirements</p>
                         </div>
                         <ul className="list-disc pl-8 space-y-2 text-gray-600">
                             {rulesData.teamRequirements.map((rule, index) => (
@@ -116,8 +122,8 @@ const Rules = () => {
                     {/* Venue */}
                     <div className="bg-white rounded-lg shadow p-8" data-aos="fade-up">
                         <div className="flex items-center mb-6">
-                            <MapPin className="h-10 w-10 text-[#4ECDC4] mr-4" />
-                            <h2 className="text-2xl font-bold">Competition Venue</h2>
+                            <Location className="h-10 w-10 text-[#4ECDC4] mr-4" />
+                            <p className="text-2xl font-bold">Competition Venue</p>
                         </div>
                         <ul className="list-disc pl-8 space-y-2 text-gray-600">
                             {rulesData.venueDetails.map((rule, index) => (

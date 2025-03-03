@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import api from "../../utils/api";
-import { Shield, Plus, X, Pencil } from "lucide-react";
+import { IoShieldHalfSharp as Shield } from "react-icons/io5";
+import {
+    LuPlus as Plus,
+    LuPencilLine as Pencil
+} from "react-icons/lu"
+import { CgClose as X, } from "react-icons/cg";
 
 import { toast } from "sonner";
 import { confirmAlert } from 'react-confirm-alert';
@@ -131,8 +136,8 @@ const Teams = () => {
 
     }
     return (
-        <div className="fade-in flex flex-col gap-3">
-            <h4 className="text-gray-400">Create team</h4>
+        <div className="fade-in flex flex-col gap-3 tracking-wide" >
+            <p className="text-gray-400">Create team</p>
             <form onSubmit={handleCreateTeam} className="flex flex-row items-center w-fit h-fit ">
 
                 <input name="name" id="name" type="text"
@@ -161,9 +166,9 @@ const Teams = () => {
                     ) : (
                         teams.map((team, index) => (
                             <div key={index} className="flex flex-col gap-4 p-6 rounded-xl col-span-1 bg-white shadow-xl">
-                                <div className="flex gap-2 items-end capitalize">
-                                    <Shield />
-                                    <h3 className="text-2xl font-semibold">{team.name}</h3>
+                                <div className="flex gap-2 items-center capitalize">
+                                    <Shield className="text-2xl" />
+                                    <p className="text-2xl font-semibold">{team.name}</p>
                                 </div>
                                 <p ><span className="font-bold">Group:</span> {team.group}</p>
                                 <div className="grid grid-cols-2 gap-2">

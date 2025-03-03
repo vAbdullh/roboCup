@@ -8,6 +8,7 @@ const ProtectedRoute = ({ children }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        helix.register()
         if (!user) {
             navigate("/auth");
         }
@@ -18,14 +19,10 @@ const ProtectedRoute = ({ children }) => {
             size="45"
             speed="2.5"
             color="black"
-        >adsjfkajd</l-helix >;
+        ></l-helix >;
     }
 
     return user ? children : null;
 };
 
 export default ProtectedRoute;
-
-helix.register()
-
-// Default values shown

@@ -11,6 +11,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Rules from "./pages/Rules";
 import Matches from "./pages/Matches";
+import ScrollManager from "./components/ScrollManager";
 
 function App() {
   useEffect(() => {
@@ -36,6 +37,7 @@ function AppContent() {
   }
   return (
     <Router>
+      <ScrollManager />
       <Toaster richColors position="top-right" closeButton toastOptions={{
         style: {
           fontWeight: '200',

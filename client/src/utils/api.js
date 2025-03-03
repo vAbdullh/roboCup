@@ -66,12 +66,22 @@ const api = {
             throw new Error(error.response?.data?.error || "An error occurred. Try again or contact the developer.");
         }
     },
-    deleteMatch: async (matchId, token) => {
+    updateVenue: async (matchId, venue, token) => {
         try {
-            const response = await axios.patch(`${API_URL}/match/start/${matchId}`, {}, createAuthHeader(token));
+            const response = await axios.patch(`${API_URL}/match/venue/${matchId}`, { venue }, createAuthHeader(token));
             return response.data.message;
         } catch (error) {
-            console.error("Error starting match:", error);
+            console.error("Error updating venue:", error);
+            throw new Error(error.response?.data?.error || "An error occurred. Try again or contact the developer.");
+        }
+    },
+
+    deleteMatch: async (matchId, token) => {
+        try {       
+            const response = await axios.delete(`${API_URL}/match/${matchId}`, createAuthHeader(token));
+            return response.data.message;
+        } catch (error) {
+            console.error("Error deleting match:", error);
             throw new Error(error.response?.data?.error || "An error occurred. Try again or contact the developer.");
         }
     },

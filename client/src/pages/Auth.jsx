@@ -23,14 +23,7 @@ const AuthPage = () => {
     useEffect(() => {
         quantum.register();
     }, []);
-    const handleReset = async () => {
-        try {
-            await sendPasswordResetEmail(auth, email);
-            toast.success("Password reset email sent! Check your inbox.");
-        } catch (error) {
-            console.error("Error sending password reset email:", error);
-        }
-    };
+
     const handleLogin = async (e) => {
         e.preventDefault();
         const adminErrorMessages = [
@@ -58,8 +51,7 @@ const AuthPage = () => {
         try {
             setErr("");
             setLoading(true);
-            await signInWithEmailAndPassword(auth, 'test@user.com', '11111111');
-            // await signInWithEmailAndPassword(auth, email, password);
+            await signInWithEmailAndPassword(auth, email, password);
             navigate("/admin");
         } catch (error) {
             if (error.code === "auth/invalid-credential") {
@@ -77,12 +69,12 @@ const AuthPage = () => {
     };
 
     return (
-        <>
-            <Header />
-            <div className="w-screen h-dvh grid place-items-center">
+        <div className="flex flex-col justify-between h-svh">
+            <Header dark_text />
+            <div className="w-screen my-auto grid place-items-center">
                 <form className="max-w-lg w-96  md:w-full mx-auto px-10" onSubmit={handleLogin}>
                     <div className="my-5 text-center">
-                        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-5xl">Welcome Back!</h1>
+                        <p className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-5xl">Welcome Back!</p>
                         <p className="text-gray-600">Log in to continue where you left off.</p>
                     </div>
                     <p className={`min-h-6 text-red-600 my-2`}>{err}</p>
@@ -106,10 +98,8 @@ const AuthPage = () => {
                         ></l-quantum> : 'Login'}
                     </button>
                 </form>
-                <button className="bg-amber-300 hover:bg-amber-500" onClick={handleReset}>reset</button>
-                <button className="bg-blue-500 text-white p-3 " onClick={handleLogin}>Fast login</button>
             </div>
-        </>
+        </div>
     );
 };
 

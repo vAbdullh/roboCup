@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { X, Menu } from 'lucide-react';
+import {
+    CgClose as X,
+    CgMenuLeft as Menu
+} from "react-icons/cg";
 import logo from '../assets/logo.png';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -41,10 +44,10 @@ export default function Header({ dark_text }) {
 
                 {/* Mobile Navigation */}
                 {isOpen && (
-                    <div className='fixed top-0 w-full h-screen duration-100 z-20 left-0  bg-black bg-opacity-90 flex flex-col items-center py-5 space-y-4 md:hidden fade-left'>
+                    <div className='fixed top-0 w-full h-screen duration-100 z-20 left-0  bg-black bg-opacity-90 flex flex-col items-center py-5 space-y-4 md:hidden' data-aos="fade-right">
                         <X onClick={() => setIsOpen(false)} size={28} className={`absolute right-3.5 transition-all transform duration-200 z-40 text-white ${isOpen ? 'opacity-100 rotate-180' : 'opacity-0 rotate-0'}`} />
 
-                        <ul className='flex flex-col gap-4 text-lg capitalize text-center text-white'>
+                        <ul className='flex flex-col gap-4 text-lg capitalize text-center text-white pt-5'>
                             <li><NavLink to="/"
                                 className={({ isActive }) => isActive ? 'px-0.5 text-blue-500 font-bold' : 'px-0.5'}
                             >Home</NavLink></li>
