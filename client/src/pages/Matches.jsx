@@ -1,10 +1,11 @@
+"use client"
+
 import { useEffect, useState, useMemo, useCallback } from "react"
 import api from "../utils/api"
 import { toast } from "sonner"
 import { lineWobble, ping } from "ldrs"
 import { IoIosPause as Pause } from "react-icons/io"
 import { GiSoccerField as Field } from "react-icons/gi"
-import { IoRefreshOutline } from "react-icons/io5"
 import { FiCalendar, FiClock } from "react-icons/fi"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -84,7 +85,6 @@ const MatchCard = ({ match }) => {
             <div className="flex flex-col gap-6">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-
                         <p className="text-lg font-medium capitalize">{match.team1}</p>
                     </div>
                     <div className={`text-2xl font-bold ${match.status === "completed" ? "text-gray-900" : "text-gray-600"}`}>
@@ -94,7 +94,6 @@ const MatchCard = ({ match }) => {
 
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-
                         <p className="text-lg font-medium capitalize">{match.team2}</p>
                     </div>
                     <div className={`text-2xl font-bold ${match.status === "completed" ? "text-gray-900" : "text-gray-600"}`}>
@@ -140,7 +139,6 @@ export default function Matches() {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [filter, setFilter] = useState("all")
-    const [refreshing, setRefreshing] = useState(false)
 
     // Fetch matches data
     useEffect(() => {
@@ -162,22 +160,6 @@ export default function Matches() {
             toast.error("Failed to load matches: check your internet connection and try again")
         } finally {
             setLoading(false)
-        }
-    }
-
-    // Handle refresh
-    const handleRefresh = async () => {
-        setRefreshing(true)
-        try {
-            const response = await api.getMatches()
-            setMatches(response.sort((a, b) => new Date(b.time) - new Date(a.time)))
-            setError(null)
-            toast.success("Matches updated successfully")
-        } catch (error) {
-            console.error("Failed to refresh matches:", error)
-            toast.error("Failed to refresh matches")
-        } finally {
-            setRefreshing(false)
         }
     }
 
@@ -213,15 +195,6 @@ export default function Matches() {
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                         <h1 className="hidden">Matches</h1>
                         <p className="text-4xl text-gray-900">Matches</p>
-                        <button
-                            onClick={handleRefresh}
-                            disabled={loading || refreshing}
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                            aria-label="Refresh matches"
-                        >
-                            <IoRefreshOutline className={`h-5 w-5 ${refreshing ? "animate-spin" : ""}`} />
-                            <span>Refresh</span>
-                        </button>
                     </div>
 
                     {/* Filter buttons */}
@@ -255,7 +228,7 @@ export default function Matches() {
 
                 {/* Error state */}
                 {error && !loading && (
-                    <div className="flex flex-col items-center justify-center py-16 bg-white rounded-xl shadow-sm">
+                    <div className="flex flex-col items-center justify-center py-16 px-3 text-center bg-white rounded-xl shadow-sm">
                         <div className="text-red-500 mb-2 text-xl">{error}</div>
                         <p className="text-gray-500 mb-4">We couldn't load the matches. Please try again.</p>
                         <button
