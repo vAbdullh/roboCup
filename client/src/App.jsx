@@ -12,6 +12,7 @@ import 'aos/dist/aos.css';
 import Rules from "./pages/Rules";
 import Matches from "./pages/Matches";
 import ScrollManager from "./components/ScrollManager";
+import { helix } from 'ldrs'
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,8 @@ function App() {
 
 function AppContent() {
   const { loading } = useAuth();
+  helix.register();
+
   if (loading) {
     return (<div className="h-dvh w-dvw grid place-items-center"> <l-helix
       size="45"
