@@ -25,7 +25,7 @@ const Rules = () => {
             "Robots must not produce magnetic interference in other robots on the field.",
         ],
         teamRequirements: [
-            "2-4 members per team",
+            "3-4 members per team",
             "All members must have technical roles",
             "Each team must have a captain. The captain is responsible for communication with referees.",
             "Contestants must consent to media coverage.",
@@ -40,9 +40,9 @@ const Rules = () => {
             "After taking the top two teams from each group, a knockout phase will begin, where the losing team is eliminated after each match.",
         ],
         keyDates: [
-            "Registration: March 13 to 21, 2025 </br> <span class='text-gray-400'> Teams can apply to participate in the competition during this period.</span>",
-            "Acceptance: March 29, 2025</br> <span class='text-gray-400'> Accepted teams will receive notifications via email sent to the team captains.</span>",
-            "Workshops: April 8-16, 2025</br> <span class='text-gray-400'> Participants will be divided into groups and sent details about workshop dates, locations, and directions.</span>",
+            "Registration: April 6 to 12, 2025 </br> <span class='text-gray-400'> Teams can apply to participate in the competition during this period.</span>",
+            "Acceptance: April 14, 2025</br> <span class='text-gray-400'> Accepted teams will receive notifications via email sent to the team captains.</span>",
+            "Workshops: April 15-22, 2025</br> <span class='text-gray-400'> Participants will be divided into groups and sent details about workshop dates, locations, and directions.</span>",
             "Competitions Begin: May 3, 2025</br> <span class='text-gray-400'> The competition officially starts.</span>",
 
             "Daily matches: 12:30 PM - 4:00 PM",

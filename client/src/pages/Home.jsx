@@ -42,31 +42,36 @@ export default function Home() {
                     </p>
                     <div className="flex gap-4 flex-col md:flex-row items-center justify-center w-full max-w-2xl mx-auto">
                         <button
-                            onClick={openRegisterFrom}
-                            data-aos="fade-up" data-aos-duration="1000"
-                            className="w-full grow-1 group flex items-center justify-center gap-3 
-                                       bg-[#263741] hover:bg-[#344955]
-                                      text-white font-semibold text-xl
-                                       px-8 py-4 rounded-lg
-                                       transform hover:-translate-y-0.5 active:translate-y-0
-                                        transition-all duration-200
-                                        shadow-lg hover:shadow-xl active:shadow text-center"
+                            onClick={openRegisterFrom}s
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            className="w-full flex items-center justify-center gap-3
+             bg-[#4ECDC4] hover:bg-[#47B8B0]
+             text-white font-semibold text-xl
+             px-8 py-4 rounded-lg
+             transition-all duration-200 ease-in-out
+             shadow-lg hover:shadow-xl active:shadow-md
+             active:scale-95 group"
                         >
                             Register Now
-                            <ArrowRight className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
+                            <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
                         </button>
+
                         <button
                             onClick={scrollToAbout}
-                            data-aos="fade-up" data-aos-duration="1000"
-                            className="w-full roup flex items-center justify-center gap-3 
-                border-white text-white font-semibold text-xl
-                 border px-8 py-4 rounded-lg capitalize
-                 transform hover:-translate-y-0.5 active:translate-y-0
-                 transition-all duration-200
-                 shadow-lg hover:shadow-xl active:shadow text-center"
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            className="w-full flex items-center justify-center gap-3
+             bg-transparent border-2
+             text-white font-semibold text-xl
+             px-8 py-4 rounded-lg
+             transition-all duration-200 ease-in-out
+             shadow-lg hover:shadow-xl 
+             active:scale-95 group"
                         >
-                            learn more
+                            Learn More
                         </button>
+
                     </div>
                 </div>
             </section>
@@ -200,7 +205,7 @@ export default function Home() {
                 <div className="max-w-3xl mx-auto text-base sm:text-lg text-gray-600" data-aos="fade-up" data-aos-duration="1000">
                     <ul className='space-y-3 list-disc pl-5'>
                         <li>
-                            Contestants must be registered in teams. The teams must have 2 to 4 members, with one designated captain responsible for communication with referees.
+                            Contestants must be registered in teams. The teams must have 3 to 4 members, with one designated captain responsible for communication with referees.
                         </li>
                         <li>
                             All members must have a technical role, and teams must fairly share any monetary awards.
