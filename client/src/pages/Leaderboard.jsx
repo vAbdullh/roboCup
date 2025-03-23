@@ -68,13 +68,8 @@ export default function Leaderboard() {
 
             <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen">
                 <div className="rounded-xl mb-6">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-                        <div className="flex items-center gap-3">
-                            <IoTrophyOutline className="h-8 w-8 text-yellow-500" aria-hidden="true" />
-                            <h1 className="hidden">Leaderboard</h1>
-                            <p className="text-4xl font-bold text-gray-900">Leaderboard</p>
-                        </div>
-                    </div>
+                    <h1 className="hidden">Leaderboard</h1>
+                    <p className="text-4xl font-bold text-gray-900">Leaderboard</p>
                 </div>
 
                 {/* Loading state */}

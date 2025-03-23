@@ -191,7 +191,7 @@ export default function Matches() {
             <Header dark_text />
 
             <main className="grow-1 min-h-screen container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="rounded-xl py-6 mb-6">
+                <div className="rounded-xl mb-6">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                         <h1 className="hidden">Matches</h1>
                         <p className="text-4xl text-gray-900">Matches</p>
