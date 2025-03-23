@@ -55,6 +55,10 @@
     font-display: swap;
 }
 
+body {
+    background-color: #263741;
+}
+
 h1,
 h2,
 h3,

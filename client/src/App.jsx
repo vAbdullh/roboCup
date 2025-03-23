@@ -32,7 +32,7 @@ function AppContent() {
   helix.register();
 
   if (loading) {
-    return (<div className="h-dvh w-dvw grid place-items-center"> <l-helix
+    return (<div className="h-dvh w-dvw grid place-items-center bg-white"> <l-helix
       size="45"
       speed="2.5"
       color="#263741"
