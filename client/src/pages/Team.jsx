@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import { FaTwitter, FaLinkedin, FaUserTie, FaUserNurse, FaStar, FaUser } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md';
 import { RiRobot2Fill, RiTwitterXFill } from 'react-icons/ri';
+import { PiLinktreeLogoBold } from 'react-icons/pi';
 
 export default function Team() {
     return (
@@ -48,6 +49,11 @@ export default function Team() {
                                                     <FaLinkedin className="md:p-2 size-5 md:size-9 hover:bg-gray-200 aspect-square transition-all transform" />
                                                 </a>
                                             )}
+                                            {member.social && (
+                                                <a href={`mailto:${member.social}`} target="_blank" rel="noopener noreferrer" className='rounded-full overflow-hidden'>
+                                                    <PiLinktreeLogoBold className="md:p-2 size-5 md:size-9 hover:bg-gray-200 aspect-square transition-all transform" />
+                                                </a>
+                                            )}
                                             {member.email && (
                                                 <a href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer" className='rounded-full overflow-hidden'>
                                                     <MdEmail className="md:p-2 size-5 md:size-9 hover:bg-gray-200 aspect-square transition-all transform" />
@@ -79,7 +85,14 @@ const departments = [
         "name": "Leadership",
         "members": [
             {
-                "name": "Abdullah Mohammed Binsalman",
+                "name": "Abdullah Mohammed Binsalman (ECEC)",
+                "email": "a.binsalman03@Gmail.com",
+                "role": "president",
+                "gender": "male",
+                "linkedin": "https://www.linkedin.com/in/abdullah-binsalman-2b055b214/"
+            },
+            {
+                "name": "Rahaf Abdulkhaliq Aladwani (ECEC)",
                 "email": "a.binsalman03@Gmail.com",
                 "role": "president",
                 "gender": "male",
@@ -97,7 +110,7 @@ const departments = [
                 "email": "hamoodesameer5@gmail.com",
                 "role": "Sub manager",
                 "gender": "male",
-                "x": "https://x.com/ahmed1_S1"
+                "social": "https://linktr.ee/ahmed_abdeltawwab"
             },
             {
                 "name": "Raed Mustafa Saidi",
@@ -194,7 +207,7 @@ const departments = [
                 "email": "anasdx.a.b@gmail.com",
                 "role": "Leader",
                 "gender": "male",
-                "linkedin": "www.linkedin.com/in/anas-bajbaa-1b46b2302\r\n\r"
+                "linkedin": "http://www.linkedin.com/in/anas-bajbaa-1b46b2302"
             },
             {
                 "name": "Al-Mahdi Mohammed Sairafi",

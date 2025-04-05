@@ -29,7 +29,7 @@ export default function Home() {
 
         <div className="">
             <section className="h-screen w-full bg-cover bg-center md:bg-fixed flex items-center justify-center md:bg-contain"
-                style={{ backgroundImage: `url(${bgImage})` }}>
+                style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}>
                 <Header />
 
                 <div className="h-full w-full bg-black/75 flex flex-col gap-5 md:items-center justify-end md:justify-center text-white md:text-center p-3 pb-20 sm:p-3">
