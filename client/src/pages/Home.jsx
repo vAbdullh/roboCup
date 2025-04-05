@@ -213,7 +213,7 @@ export default function Home() {
                             Robots must be remotely controlled and move in two dimensions (X & Y axis), and have certification to enter King Faisal Conference Center.
                         </li>
                         <li>
-                            Dimensions of robots must not exceed: <span className="whitespace-nowrap">22 cm x 22 cm x 22 cm</span>, and weight must not exceed 2.2 Kg. </li>
+                            Dimensions of robots must not exceed: <span className="whitespace-nowrap">30 cm x 30 cm x 20 cm</span>, and weight must not exceed 3.5 Kg. </li>
                     </ul>
                 </div>
                 <Link to="/rules"

@@ -12,8 +12,8 @@ import Footer from "../components/Footer";
 const Rules = () => {
     const rulesData = {
         robotSpecifications: [
-            "Maximum dimensions: <span class='whitespace-nowrap'>22 cm x 22 cm x 22 cm</span>",
-            "Weight limit: 2.2kg.",
+            "Maximum dimensions: <span class='whitespace-nowrap'>30 cm x 30 cm x 20 cm</span>",
+            "Weight limit: 3.5kg.",
             "Must use remote control.",
             "The robots must have a certification to enter King Faisal Conference Center.",
             "Must move in 2D (X/Y axis).",
