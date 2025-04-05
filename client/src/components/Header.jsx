@@ -31,6 +31,9 @@ export default function Header({ dark_text }) {
                         <li><NavLink to="/matches"
                             className={({ isActive }) => isActive ? 'px-0.5 font-bold border-b text-blue-500 border-blue-500' : 'px-0.5 font-light'}
                         >matches</NavLink></li>
+                        <li><NavLink to="/team"
+                            className={({ isActive }) => isActive ? 'px-0.5 font-bold border-b text-blue-500 border-blue-500' : 'px-0.5 font-light'}
+                        >Our Team</NavLink></li>
                     </ul>
                 </nav>
 
@@ -60,6 +63,9 @@ export default function Header({ dark_text }) {
                             <li><NavLink to="/matches"
                                 className={({ isActive }) => isActive ? 'px-0.5 text-blue-500 font-bold' : 'px-0.5'}
                             >matches</NavLink></li>
+                            <li><NavLink to="/team"
+                                className={({ isActive }) => isActive ? 'px-0.5 text-blue-500 font-bold' : 'px-0.5'}
+                            >Our Team</NavLink></li>
                         </ul>
                     </div>
                 )}

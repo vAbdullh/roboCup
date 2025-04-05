@@ -28,8 +28,7 @@ export default function Home() {
     return (
 
         <div className="">
-            <section
-                className="h-svh w-full bg-cover bg-center bg-fixed flex items-center justify-center"
+            <section className="h-screen w-full bg-cover bg-center md:bg-fixed flex items-center justify-center md:bg-contain"
                 style={{ backgroundImage: `url(${bgImage})` }}>
                 <Header />
 
@@ -42,7 +41,7 @@ export default function Home() {
                     </p>
                     <div className="flex gap-4 flex-col md:flex-row items-center justify-center w-full max-w-2xl mx-auto">
                         <button
-                            onClick={openRegisterFrom}s
+                            onClick={openRegisterFrom} s
                             data-aos="fade-up"
                             data-aos-duration="1000"
                             className="w-full flex items-center justify-center gap-3

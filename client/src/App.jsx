@@ -11,6 +11,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Rules from "./pages/Rules";
 import Matches from "./pages/Matches";
+import Team from "./pages/Team";
 import ScrollManager from "./components/ScrollManager";
 import { helix } from 'ldrs'
 
@@ -53,6 +54,7 @@ function AppContent() {
         <Route path="/rules" element={<Rules />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/matches" element={<Matches />} />
+        <Route path="/team" element={<Team />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route
           path="/admin"
@@ -63,7 +65,6 @@ function AppContent() {
           }
         />
       </Routes>
-      {/* <div className="fixed bottom-0 right-0 bg-green-400 text-white p-2 flex justify-center items-center gap-1"><Bug color="#fff" />Demo</div> */}
     </Router>
   );
 }
