@@ -9,6 +9,8 @@ import { GiSoccerField as Field } from "react-icons/gi"
 import { FiCalendar, FiClock } from "react-icons/fi"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import { BiSolidTimer } from "react-icons/bi"
+import { Link } from "react-router-dom"
 
 // Utility function for date formatting
 const formatDate = (date) => {
@@ -190,79 +192,17 @@ export default function Matches() {
         <div className="flex flex-col min-h-screen bg-gray-50">
             <Header dark_text />
 
-            <main className="grow-1 min-h-screen container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <main className="grow-1 container mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-[85vh]">
                 <div className="rounded-xl mb-6">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-                        <h1 className="hidden">Matches</h1>
-                        <p className="text-4xl text-gray-900">Matches</p>
-                    </div>
-
-                    {/* Filter buttons */}
-                    <div className="flex flex-wrap gap-2 mb-6" role="group" aria-label="Match filter options">
-                        {filterOptions.map((status) => (
-                            <FilterButton
-                                key={status}
-                                status={status}
-                                activeFilter={filter}
-                                onClick={() => handleFilterChange(status)}
-                                count={statusCounts[status] || 0}
-                            />
-                        ))}
-                    </div>
+                    <h1 className="hidden">Matches</h1>
+                    <p className="text-4xl font-bold text-gray-900">Matches</p>
                 </div>
-
-                {/* Loading state */}
-                {loading && (
-                    <div className="flex flex-col items-center justify-center py-16 bg-white rounded-xl shadow-sm">
-                        <l-line-wobble
-                            size="80"
-                            stroke="5"
-                            bg-opacity="0.1"
-                            speed="1.75"
-                            color="black"
-                            aria-label="Loading matches"
-                        ></l-line-wobble>
-                        <p className="mt-4 text-gray-500">Loading matches...</p>
-                    </div>
-                )}
-
-                {/* Error state */}
-                {error && !loading && (
-                    <div className="flex flex-col items-center justify-center py-16 px-3 text-center bg-white rounded-xl shadow-sm">
-                        <div className="text-red-500 mb-2 text-xl">{error}</div>
-                        <p className="text-gray-500 mb-4">We couldn't load the matches. Please try again.</p>
-                        <button
-                            onClick={fetchMatches}
-                            className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-colors"
-                        >
-                            Retry
-                        </button>
-                    </div>
-                )}
-
-                {/* Empty state */}
-                {!loading && !error && filteredMatches.length === 0 && (
-                    <div className="flex flex-col items-center justify-center py-16 bg-white rounded-xl shadow-sm">
-                        <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-                            <Field className="text-gray-400 size-8" aria-hidden="true" />
-                        </div>
-                        <h3 className="text-lg font-medium text-gray-900 mb-1">No matches found</h3>
-                        <p className="text-gray-500">
-                            {filter !== "all"
-                                ? `There are no ${filter} matches at the moment.`
-                                : "There are no matches available right now."}
-                        </p>
-                    </div>
-                )}
-
-                {/* Match list */}
-                {!loading && !error && filteredMatches.length > 0 && (
-                    <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                        {filteredMatches.map((match, index) => (
-                            <MatchCard key={index} match={match} />
-                        ))}
-                    </div>
-                )}
+                <div className="text-gray-500 rounded-md shadow-md bg-white text-center py-10 flex flex-col gap-2 justify-center items-center" data-aos="fade-up" data-aos-duration="500">
+                    <BiSolidTimer className="size-20" />
+                    <p className="text-lg">RoboCup 2025 is coming!</p>
+                    <p className="text-lg">Save the date: May 3-6, 2025!</p>
+                    <Link to="/" className="border-b text-blue-500 hover:underline">Go back to Home</Link>
+                </div>
             </main>
 
             <Footer />
