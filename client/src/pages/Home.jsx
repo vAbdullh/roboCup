@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import bgImage from "../assets/hero.png";
+import bgImage from "../assets/hero.webp";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Timeline from "../components/Timeline";
@@ -29,7 +29,7 @@ export default function Home() {
 
         <div className="">
             <section
-                className="h-svh w-full bg-cover bg-center flex items-center justify-center"
+                className="h-svh w-full bg-cover bg-center bg-fixed flex items-center justify-center"
                 style={{ backgroundImage: `url(${bgImage})` }}>
                 <Header />
 
