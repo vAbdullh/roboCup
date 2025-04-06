@@ -47,9 +47,10 @@ const Rules = () => {
             "Registration: April 6 to 12, 2025 </br> <span class='text-gray-400'>Teams can apply to participate in the competition during this period</span>",
             "Acceptance: April 14, 2025</br> <span class='text-gray-400'> Accepted teams will receive notifications via email sent to the team captains</span>",
             "Workshops: April 15-22, 2025</br> <span class='text-gray-400'> Participants will be divided into groups and sent details about workshop dates, locations, and directions.</span>",
-            "Robotics Evaluation Day: may 3,2025",
-            "Competitions Begin: May 4, 2025</br> <span class='text-gray-400'> The competition officially starts.</span>",
-            "Daily matches: 11:30 PM - 2:45 PM",
+            "Robotics Evaluation Day: May 3,2025",
+            "Competitions Begin: May 6-8, 2025</br> <span class='text-gray-400'> The competition officially starts.</span>",
+            "Evaluation Day: May 7, 2025",
+            "Daily matches: 11:30 AM - 2:45 PM",
         ],
         venueDetails: [
             "Jeddah, Saudi Arabia.",

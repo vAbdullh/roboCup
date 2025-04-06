@@ -31,7 +31,7 @@ export default function Team() {
 
                                         {/* Info */}
                                         <div className="flex-1">
-                                            <p className={`text-xs md:text-[16px] capitalize font-medium ${['Leader', 'Co-Leader', 'Sub Leader', 'president'].includes(member.role) ? 'text-yellow-600 font-bold' : 'text-gray-900'}`}>
+                                            <p className={`text-xs md:text-[16px] capitalize font-medium ${['Leader', 'Co-Leader', 'Sub Leader', 'president (ECEC)'].includes(member.role) ? 'text-yellow-600 font-bold' : 'text-gray-900'}`}>
                                                 {member.name}
                                             </p>
                                             <p className="text-sm text-gray-500">{member.role}</p>
@@ -50,7 +50,7 @@ export default function Team() {
                                                 </a>
                                             )}
                                             {member.social && (
-                                                <a href={`mailto:${member.social}`} target="_blank" rel="noopener noreferrer" className='rounded-full overflow-hidden'>
+                                                <a href={`${member.social}`} target="_blank" rel="noopener noreferrer" className='rounded-full overflow-hidden'>
                                                     <PiLinktreeLogoBold className="md:p-2 size-5 md:size-9 hover:bg-gray-200 aspect-square transition-all transform" />
                                                 </a>
                                             )}
@@ -85,25 +85,25 @@ const departments = [
         "name": "Leadership",
         "members": [
             {
-                "name": "Abdullah Mohammed Binsalman (ECEC)",
+                "name": "Abdullah Mohammed Binsalman",
                 "email": "a.binsalman03@Gmail.com",
-                "role": "president",
+                "role": "president (ECEC)",
                 "gender": "male",
                 "linkedin": "https://www.linkedin.com/in/abdullah-binsalman-2b055b214/"
             },
             {
-                "name": "Rahaf Abdulkhaliq Aladwani (ECEC)",
-                "email": "a.binsalman03@Gmail.com",
-                "role": "president",
-                "gender": "male",
-                "linkedin": "https://www.linkedin.com/in/abdullah-binsalman-2b055b214/"
+                "name": "Rahaf Abdulkhaliq Aladwani",
+                "email": "aladwanirahaf2023@gmail.com",
+                "role": "president (ECEC)",
+                "gender": "female",
+                "linkedin": "https://www.linkedin.com/in/rahaf-aladwani-68b3b82aa"
             },
             {
                 "name": "Ashraqat Ali Alsalamah ",
                 "email": "Ashraqata3@gmail.com",
                 "role": "Manager",
                 "gender": "female",
-                "linkedin": "https://www.linkedin.com/in/ashraqat-alsalamah-8882b5289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                "social": "https://linktr.ee/Ashraqat_Alsalamah"
             },
             {
                 "name": "ahmed sameer abdueltawwab",

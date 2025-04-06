@@ -19,8 +19,13 @@ export default function Timeline() {
         },
         {
             title: 'Competitions Begin',
-            date: 'May 3-6, 2025',
+            date: 'May 6-8, 2025',
             description: 'The competition begins.'
+        },
+        {
+            title: 'Evaluation Day',
+            date: 'May 7, 2025',
+            description: 'Evaluation Day for the teams.'
         }
     ]
     return (

@@ -170,15 +170,15 @@ export default function Home() {
                             <ul className="space-y-4 w-full md:text-lg">
                                 <li className="flex gap-3 p-3 rounded-lg transition-colors">
                                     <span className="font-semibold min-w-24">Start Date:</span>
-                                    <span>May 3, 2025</span>
-                                </li>
-                                <li className="flex gap-3 p-3 rounded-lg transition-colors">
-                                    <span className="font-semibold min-w-24">End Date:</span>
                                     <span>May 6, 2025</span>
                                 </li>
                                 <li className="flex gap-3 p-3 rounded-lg transition-colors">
+                                    <span className="font-semibold min-w-24">End Date:</span>
+                                    <span>May 8, 2025</span>
+                                </li>
+                                <li className="flex gap-3 p-3 rounded-lg transition-colors">
                                     <span className="font-semibold min-w-24">Daily Hours:</span>
-                                    <span>12:30 PM - 4:00 PM</span>
+                                    <span>11:30 AM - 02:45 PM</span>
                                 </li>
                             </ul>
                         </div>
