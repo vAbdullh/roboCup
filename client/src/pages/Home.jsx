@@ -84,7 +84,7 @@ export default function Home() {
                             <span>What is RoboCup?</span>
                         </h2>
                         <p className="text-lg sm:text-xl text-gray-600 capitalize" data-aos="fade-up" data-aos-duration="1000">
-                            technological challenge that combines engineering and programming skills in an entertaining and educational way. It involves designing, building, and programming robots to compete on a miniature football field. As the first of its kind in Saudi Arabia, it promotes STEM skills, innovation, and collaboration with major football clubs.
+                            Robotics competition where autonomous RoboCars play in a miniature football field, combining engineering and programming skills in an entertaining and educational way. It involves designing, building, and programming. As the first of its kind in Saudi Arabia, it promotes STEM skills, innovation.
                         </p>
                     </div>
 
@@ -210,7 +210,7 @@ export default function Home() {
                             All members must have a technical role, and teams must fairly share any monetary awards.
                         </li>
                         <li>
-                            Robots must be remotely controlled and move in two dimensions (X & Y axis), and have certification to enter King Faisal Conference Center.
+                            Robots must be remotely controlled and move in two dimensions (X & Y axis).
                         </li>
                         <li>
                             Dimensions of robots must not exceed: <span className="whitespace-nowrap">30 cm x 30 cm x 20 cm</span>, and weight must not exceed 3.5 Kg. </li>

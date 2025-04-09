@@ -62,14 +62,12 @@ export default function Footer() {
 
                     {/* Developer Credit */}
                     <p className="text-sm text-center text-gray-500">
-                        Crafted with ❤️ by{" "}
-                        <a
+                        Crafted with ❤️ by 403 <a
                             href="https://abdullh.tech"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-gray-200 hover:text-white transition-colors underline"
-                        >
-                            abdullh.tech
+                        > abdullh.tech
                         </a>
                     </p>
                 </div>

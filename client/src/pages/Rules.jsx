@@ -15,7 +15,6 @@ const Rules = () => {
             "Maximum dimensions: 30 cm x 30cm x 20cm",
             "Weight limit: 3.5kg",
             "Must use remote control",
-            "The robots must have a certification to enter King Faisal Conference Center",
             "Must move in 2D (X/Y axis)",
             "At least one team robot must be the seeker",
             "Robot must be clearly distinguished from each team either by color or markings",
@@ -47,9 +46,8 @@ const Rules = () => {
             "Registration: April 6 to 12, 2025 </br> <span class='text-gray-400'>Teams can apply to participate in the competition during this period</span>",
             "Acceptance: April 14, 2025</br> <span class='text-gray-400'> Accepted teams will receive notifications via email sent to the team captains</span>",
             "Workshops: April 15-22, 2025</br> <span class='text-gray-400'> Participants will be divided into groups and sent details about workshop dates, locations, and directions.</span>",
-            "Robotics Evaluation Day: May 3,2025",
+            "Robotics Evaluation Day: May 5,2025",
             "Competitions Begin: May 6-8, 2025</br> <span class='text-gray-400'> The competition officially starts.</span>",
-            "Evaluation Day: May 7, 2025",
             "Daily matches: 11:30 AM - 2:45 PM",
         ],
         venueDetails: [

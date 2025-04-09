@@ -125,7 +125,7 @@ const departments = [
         "name": "Public Relations",
         "members": [
             {
-                "name": "Abdullah Fahad ALSULAMI ",
+                "name": "Abdullah Fahad Alsulami",
                 "email": "abdullahfahd515@gmail.com",
                 "role": "Leader",
                 "gender": "male"
@@ -160,6 +160,7 @@ const departments = [
             {
                 "name": "Bairoud Bint Mousa",
                 "email": "bbir333m@gmail.com",
+                "x": "https://x.com/bxro34",
                 "role": "Member",
                 "gender": "female"
             },
@@ -264,7 +265,7 @@ const departments = [
             },
             {
                 "name": "Abdullah Mansour Alhalawani ",
-                "email": "inbox@abdullh.tech",
+                "email": "contact@abdullh.tech",
                 "role": "Member",
                 "gender": "male",
                 "x": "https://x.com/devabdullh"
@@ -287,7 +288,21 @@ const departments = [
                 "email": "Noufaltaiar@gmail.com",
                 "role": "Member",
                 "gender": "female"
-            }
+            },
+            {
+                "name": "Ghazi Mubarak Alhasah",
+                "email": "ghazialhasah@gmail.com",
+                "role": "Member",
+                "gender": "male",
+                "x": "https://x.com/ghazi_mubarak"
+            },
+            {
+                "name": "Ahmed Salem Al-Harthy",
+                "email": "AhmedAlharthy018@gmail.com",
+                "role": "Member",
+                "gender": "male",
+                "linkedin": "https://www.linkedin.com/in/ahmed-al-harthy-406684315"
+            },
         ]
     },
     {
