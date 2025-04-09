@@ -144,7 +144,7 @@ export default function Matches() {
 
     // Fetch matches data
     useEffect(() => {
-        fetchMatches()
+        // fetchMatches()
     }, [])
 
     async function fetchMatches() {
@@ -200,7 +200,7 @@ export default function Matches() {
                 <div className="text-gray-500 rounded-md shadow-md bg-white text-center py-10 flex flex-col gap-2 justify-center items-center" data-aos="fade-up" data-aos-duration="500">
                     <BiSolidTimer className="size-20" />
                     <p className="text-lg">RoboCup 2025 is coming!</p>
-                    <p className="text-lg">Save the date: May 3-6, 2025!</p>
+                    <p className="text-lg">Save the date: May 6-8, 2025!</p>
                     <Link to="/" className="border-b text-blue-500 hover:underline">Go back to Home</Link>
                 </div>
             </main>
