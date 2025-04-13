@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Admin with Visual Feedback</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+      }
+      input {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        width: 300px;
+        display: block;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        background-color: #0066cc;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      #status {
+        margin-top: 1rem;
+        line-height: 1.6;
+      }
+      .info {
+        color: #0077cc;
+      }
+      .success {
+        color: green;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Create Admin & Send Reset</h2>
+
+    <input type="email" id="email" placeholder="Enter admin email" />
+    <input type="text" id="name" placeholder="Enter display name" />
+    <button onclick="createAdminAndSendReset()">Create Admin</button>
+
+    <div id="status"></div>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyDvdFZ9o1R-JHwChxKzg4ey9Sa_XkFDru4",
+        authDomain: "robo-cup-ecec.firebaseapp.com",
+        projectId: "robo-cup-ecec",
+        storageBucket: "robo-cup-ecec.firebasestorage.app",
+        messagingSenderId: "228122202408",
+        appId: "1:228122202408:web:0b57e8f077531ddc8fc01d",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+
+      function logMessage(message, type = "info") {
+        const statusDiv = document.getElementById("status");
+        const p = document.createElement("p");
+        p.className = type;
+        p.innerText = message;
+        statusDiv.appendChild(p);
+      }
+
+      function clearMessages() {
+        document.getElementById("status").innerHTML = "";
+      }
+
+      function createAdminAndSendReset() {
+        clearMessages();
+
+        const email = document.getElementById("email").value;
+        const displayName = document.getElementById("name").value;
+
+        if (!email || !displayName) {
+          logMessage("Please enter both email and display name.", "error");
+          return;
+        }
+
+        const tempPassword = "Temp@12345";
+
+        logMessage("🔄 Creating admin account...");
+
+        auth
+          .createUserWithEmailAndPassword(email, tempPassword)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            logMessage("✅ Admin account created!", "success");
+
+            logMessage("🔄 Setting display name...");
+            return user.updateProfile({ displayName: displayName });
+          })
+          .then(() => {
+            logMessage("✅ Display name updated!", "success");
+
+            logMessage("🔄 Sending password reset email...");
+            return auth.sendPasswordResetEmail(email);
+          })
+          .then(() => {
+            logMessage("✅ Reset email sent successfully!", "success");
+            auth.signOut(); // Optional: sign out the current session
+          })
+          .catch((error) => {
+            logMessage("❌ " + error.message, "error");
+          });
+      }
+    </script>
+  </body>
+</html>
