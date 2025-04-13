@@ -21,7 +21,8 @@ const Rules = () => {
             "Each robot of a team must have a number on it to identify them individually",
             "The substitution of robots during the competition within the team or with other teams is forbidden",
             "It is recommended to include protection circuits for lithium-based batteries if used",
-            "Robots must not produce magnetic interference in other robots on the field"
+            "Robots must not produce magnetic interference in other robots on the field",
+            "<span class='text-red-400'>Robot must be durable and secure enough (structure and electrical components).</span> ",
         ],
         teamRequirements: [
             "3-4 members per team",
@@ -33,14 +34,16 @@ const Rules = () => {
             "The team must be present 30 minutes before the start of its match"
         ],
         matchRules: [
-            "Each match consists of two teams. Each team has two robots.",
+            "Each match consists of two teams. Each team has two robots that will plat during the matching at the same time.",
             "Each team holds one side of the field and the ball is in the middle.",
             "2 halves of 10 minutes each, with 10 minutes break.",
             "Group stage system (3 matches per team)",
             'The registered teams will be divided into groups of 4. Each team will play 3 matches and earn points: <ul class="list-disc pl-5 space-y-2"><li> 3 points for a win</li><li>1 point for a draw</li><li>0 points for a loss</li></ul>',
             "Teams in each group will be ranked by points from first to fourth. The top two teams from each group will advance.",
             "After taking the top two teams from each group, a knockout phase will begin, where the losing team is eliminated after each match",
-            "<span class='text-red-400'> Robots are not allowed to crash into each other</span >"
+            "Each team may have their own football strategy.",
+            "<span class='text-red-400'>Robots are not allowed to break each other (collision without breaking is allowed).</span >",
+            "<span class='text-red-400'>RoboCars are not allowed to grab the football, but it can be kicked.</span >",
         ],
         keyDates: [
             "Registration: April 6 to 12, 2025 </br> <span class='text-gray-400'>Teams can apply to participate in the competition during this period</span>",

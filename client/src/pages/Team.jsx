@@ -189,7 +189,7 @@ const departments = [
                 "email": "ghalaalzahrani215@gmail.com",
                 "role": "Member",
                 "gender": "female",
-                "linkedin": "www.linkedin.com/in/ghala-alzahrani"
+                "linkedin": "https://www.linkedin.com/in/ghala-alzahrani"
             },
             {
                 "name": "Layan sulaiman Aljasser",
@@ -197,6 +197,12 @@ const departments = [
                 "role": "Member",
                 "gender": "female",
                 "x": "https://x.com/layanssj?s=21"
+            }, {
+                "name": "Diyar Khaled Alharbe",
+                "email": "diyar.business@outlook.com",
+                "role": "Member",
+                "gender": "male",
+                "x": "https://x.com/diyarharbe"
             }
         ]
     },
