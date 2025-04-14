@@ -60,7 +60,7 @@ export default function Home() {
                             onClick={scrollToAbout}
                             data-aos="fade-up"
                             data-aos-duration="1000"
-                            className="w-full flex items-center justify-center gap-3
+                            className="w-1/2 flex items-center justify-center gap-3
              bg-transparent border-2
              text-white font-semibold text-xl
              px-8 py-4 rounded-lg
