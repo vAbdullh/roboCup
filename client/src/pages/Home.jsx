@@ -40,7 +40,7 @@ export default function Home() {
                         Join RoboCup 2025, the first of its kind to be held in the Kingdom of Saudi Arabia, where teams build and program robots to compete in an exciting football challenge.
                     </p>
                     <div className="flex gap-4 flex-col md:flex-row items-center justify-center w-full max-w-2xl mx-auto">
-                        <button
+                        {/* <button
                             onClick={openRegisterFrom} s
                             data-aos="fade-up"
                             data-aos-duration="1000"
@@ -54,7 +54,7 @@ export default function Home() {
                         >
                             Register Now
                             <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
-                        </button>
+                        </button> */}
 
                         <button
                             onClick={scrollToAbout}
