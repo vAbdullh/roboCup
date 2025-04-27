@@ -18,7 +18,7 @@ export default function Timeline() {
             title: 'Workshops and Tutorials',
             date: 'April 15-22, 2025',
             description: 'Workshops and tutorials for the competition.',
-            isCompleted: false
+            isCompleted: true
         },
         {
             title: 'Robotics Evaluation Day',
