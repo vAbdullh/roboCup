@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Timeline from "../components/Timeline";
 import SARIcon from "../assets/sar.svg";
+import { toast } from "sonner";
 
 import { MdKeyboardDoubleArrowRight as ArrowRight } from "react-icons/md";
 import { LuTrophy as Trophy } from "react-icons/lu";
@@ -21,9 +22,9 @@ export default function Home() {
     const scrollToAbout = () => {
         aboutRef.current?.scrollIntoView({ behavior: "smooth" });
     };
-    const openRegisterFrom = () => {
-        window.open("https://docs.google.com/forms/d/e/1FAIpQLSfTpbSF6uQxt0oO2wCgNJRkIkcNyCcEpXZ0F2QX9GomKyWAng/viewform?usp=preview", "_blank");
-    }
+    // const openRegisterFrom = () => {
+    //     window.open("https://docs.google.com/forms/d/e/1FAIpQLSfTpbSF6uQxt0oO2wCgNJRkIkcNyCcEpXZ0F2QX9GomKyWAng/viewform?usp=preview", "_blank");
+    // }
 
     return (
 
@@ -40,8 +41,8 @@ export default function Home() {
                         Join RoboCup 2025, the first of its kind to be held in the Kingdom of Saudi Arabia, where teams build and program robots to compete in an exciting football challenge.
                     </p>
                     <div className="flex gap-4 flex-col md:flex-row items-center justify-center w-full max-w-2xl mx-auto">
-                        {/* <button
-                            onClick={openRegisterFrom} s
+                        <button
+                            onClick={() => toast.message("Registration Closed")} s
                             data-aos="fade-up"
                             data-aos-duration="1000"
                             className="w-full flex items-center justify-center gap-3
@@ -52,15 +53,15 @@ export default function Home() {
              shadow-lg hover:shadow-xl active:shadow-md
              active:scale-95 group"
                         >
-                            Register Now
+                            Registration Closed
                             <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
-                        </button> */}
+                        </button>
 
                         <button
                             onClick={scrollToAbout}
                             data-aos="fade-up"
                             data-aos-duration="1000"
-                            className="w-1/2 flex items-center justify-center gap-3
+                            className="w-full flex items-center justify-center gap-3
              bg-transparent border-2
              text-white font-semibold text-xl
              px-8 py-4 rounded-lg
