@@ -12,9 +12,9 @@ const authMiddleware = async (req, res, next) => {
         const decodedToken = await admin.auth().verifyIdToken(idToken);
         const uid = decodedToken.uid;
 
-        const userDoc = await db.collection("users").doc(uid).get();
+        const displayNam = decodedToken.name;
 
-        req.body.user = userDoc.data().fullName;
+        req.body.user = displayNam;
 
         next();
     } catch (error) {
