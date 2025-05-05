@@ -24,7 +24,7 @@ export default function Timeline() {
             title: 'Robotics Evaluation Day',
             date: 'May 5, 2025',
             description: 'Evaluation day for the robots.',
-            isCompleted: false
+            isCompleted: true
         },
         {
             title: 'Competitions Begin',
