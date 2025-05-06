@@ -388,13 +388,7 @@ const Matches = () => {
                               <Play size={24} className="text-2xl" />
                               <span>Start Match</span>
                             </button>
-                            <button
-                              onClick={() => handleAction("delete", match.id)}
-                              className="cursor-pointer text-white rounded-md p-2 transition-all transform flex justify-center items-center gap-2 border h-11 bg-rose-500 border-rose-500 hover:bg-rose-600 hover:border-rose-600 shadow-md"
-                            >
-                              <Close className="text-2xl" />
-                              <span>Delete Match</span>
-                            </button>
+
                           </>
                         )}
                         {match.status === "live" && (
@@ -426,6 +420,13 @@ const Matches = () => {
                             <span>Continue Match</span>
                           </button>
                         )}
+                        <button
+                          onClick={() => handleAction("delete", match.id)}
+                          className="cursor-pointer text-white rounded-md p-2 transition-all transform flex justify-center items-center gap-2 border h-11 bg-rose-500 border-rose-500 hover:bg-rose-600 hover:border-rose-600 shadow-md"
+                        >
+                          <Close className="text-2xl" />
+                          <span>Delete Match</span>
+                        </button>
                       </div>
                     </div>
                   </div>
