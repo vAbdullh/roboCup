@@ -121,6 +121,15 @@ const api = {
             throw new Error(error.response?.data?.error || "An error occurred. Try again or contact the developer.");
         }
     },
+    updateMatchScore: async (matchId, team1Score, team2Score, token) => {
+        try {
+            const response = await axios.patch(`${API_URL}/match/score/${matchId}`, { team1Score, team2Score }, createAuthHeader(token));
+            return response.data.message;
+        } catch (error) {
+            console.error("Error updating match score:", error);
+            throw new Error(error.response?.data?.error || "An error occurred. Try again or contact the developer.");
+        }
+    },
     getLogs: async (token) => {
         try {
             // throw new Error("Not implemented");

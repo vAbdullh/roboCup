@@ -41,7 +41,7 @@ const matchHandler = {
     async updateMatchScoreById(req, res) {
         try {
             const { matchId } = req.params;
-            const { team1Score, team2Score } = req.body;
+            const { team1Score, team2Score, user } = req.body;
             if (!team1Score && !team2Score) {
                 return res.status(400).send({ error: 'Missing required fields' });
             }

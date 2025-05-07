@@ -108,7 +108,7 @@ const Matches = () => {
                 } else if (action === "pause") {
                   await api.setBreakMatch(matchId, token)
                 } else if (action === "score") {
-                  await api.updateMatchScoreByTeamId(matchId, team1Id, token)
+                  await api.updateMatchScore(matchId, team1Score, team2Score, token)
                 } else if (action === "venue") {
                   await api.updateVenue(matchId, venue, token)
                 } else if (action === "delete") {
@@ -304,15 +304,27 @@ const Matches = () => {
                         <p className="text-2xl text-gray-800 capitalize">{match.team1 || "Team 1"}</p>
                         <div className={` items-center justify-between ${match.status === "live" && "flex"}`}>
                           {match.status === "live" && (
-                            <button
-                              onClick={() => handleAction("score", match.id, null, match.team1Id)}
-                              className="border-b border-blue-300 text-blue-700 hover:text-blue-900 hover:border-blue-600 flex items-center gap-1 transition-all transform duration-300 cursor-pointer"
-                            >
-                              <Ball size={16} className="text-2xl" />
-                              Score +1
-                            </button>
+                            <div className="flex items-center gap-2">
+                              <input
+                                type="number"
+                                min="0"
+                                defaultValue={match.team1Score ?? 0}
+                                onChange={(e) => setMatches(prev => prev.map(m => 
+                                  m.id === match.id ? {...m, team1Score: parseInt(e.target.value) || 0} : m
+                                ))}
+                                className="w-16 p-1 border border-gray-300 rounded text-center"
+                              />
+                              <button
+                                onClick={() => handleAction("score", match.id, null, match.team1Id, match.team1Score, match.team2Score)}
+                                className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600"
+                              >
+                                Update
+                              </button>
+                            </div>
                           )}
-                          <p className="text-xl font-semibold text-gray-700">{match.team1Score ?? "N/A"}</p>
+                          {match.status !== "live" && (
+                            <p className="text-xl font-semibold text-gray-700">{match.team1Score ?? "N/A"}</p>
+                          )}
                         </div>
                       </div>
 
@@ -321,15 +333,27 @@ const Matches = () => {
                       <div className="flex-1 text-left">
                         <p className="text-2xl text-gray-800 capitalize">{match.team2 || "Team 2"}</p>
                         <div className="flex items-center justify-between">
-                          <p className="text-xl font-semibold text-gray-700">{match.team2Score ?? "N/A"}</p>
                           {match.status === "live" && (
-                            <button
-                              onClick={() => handleAction("score", match.id, null, match.team2Id)}
-                              className="border-b border-blue-300 text-blue-700 hover:text-blue-900 hover:border-blue-600 flex items-center gap-1 transition-all transform duration-300 cursor-pointer"
-                            >
-                              <Ball size={16} className="text-2xl" />
-                              Score +1
-                            </button>
+                            <div className="flex items-center gap-2">
+                              <input
+                                type="number"
+                                min="0"
+                                defaultValue={match.team2Score ?? 0}
+                                onChange={(e) => setMatches(prev => prev.map(m => 
+                                  m.id === match.id ? {...m, team2Score: parseInt(e.target.value) || 0} : m
+                                ))}
+                                className="w-16 p-1 border border-gray-300 rounded text-center"
+                              />
+                              <button
+                                onClick={() => handleAction("score", match.id, null, match.team2Id, match.team1Score, match.team2Score)}
+                                className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600"
+                              >
+                                Update
+                              </button>
+                            </div>
+                          )}
+                          {match.status !== "live" && (
+                            <p className="text-xl font-semibold text-gray-700">{match.team2Score ?? "N/A"}</p>
                           )}
                         </div>
                       </div>
