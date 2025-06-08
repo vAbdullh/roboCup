@@ -30,7 +30,7 @@ export default function Timeline() {
             title: 'Competitions Begin',
             date: 'May 6-8, 2025',
             description: 'The competition begins.',
-            isCompleted: false
+            isCompleted: true
         },
     ];
 
