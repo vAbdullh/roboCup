@@ -11,7 +11,7 @@ export default function Header({ dark_text }) {
 
     return (
         <header className={`bg-transparent ${dark_text ? 'text-[#263741]' : 'text-white'}  h-[72px]`}>
-            <div className={`absolute top-0 left-0 flex justify-between items-center w-full py-px  px-7 xl:px-10`}>
+            <div className={`absolute top-7 left-0 flex justify-between items-center w-full py-px  px-7 xl:px-10`}>
                 <Link to={'/'} className='text-2xl font-bold'>
                     <img src={logo} alt="RoboCup" className='w-14 md:w-24 h-auto object-contain' />
                 </Link>

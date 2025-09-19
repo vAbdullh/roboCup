@@ -23,6 +23,9 @@ function App() {
 
   return (
     <AuthProvider>
+      <p className="bg-green-800 text-center text-white font-light font-sans md:p-1 h-8 absolute top-0 w-screen text-[clamp(0.7rem,2vw,1rem)] z-50">
+        You are viewing a preview version. Some production features may be limited or disabled.
+      </p>
       <AppContent />
     </AuthProvider>
   );
